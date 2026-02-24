@@ -11,7 +11,6 @@ func _physics_process(delta):
 	if travelledDistance > rangeBullet:
 		queue_free()
 
-
 func _on_body_entered(body):
 	queue_free()
 	if body.has_method("takeDamage"):

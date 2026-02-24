@@ -30,7 +30,6 @@ func _physics_process(delta):
 		shootBullet()
 	move_and_slide()
 	
-
 func shootBullet():
 	const BULLET_3D = preload("uid://t00gdrxxtiwh")
 	var newBullet = BULLET_3D.instantiate()

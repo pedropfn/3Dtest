@@ -1,4 +1,4 @@
-[gd_scene load_steps=5 format=3 uid="uid://dpoe3djfljdk5"]
+[gd_scene format=3 uid="uid://dpoe3djfljdk5"]
 
 [ext_resource type="PackedScene" uid="uid://chjrhhjvxun3r" path="res://player/simple_gun/gun_model.glb" id="1_oul6g"]
 [ext_resource type="Script" uid="uid://bhjdxvj7101v" path="res://player/player.gd" id="1_rkbax"]
@@ -6,25 +6,25 @@
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_kqu6x"]
 
-[node name="Player" type="CharacterBody3D"]
+[node name="Player" type="CharacterBody3D" unique_id=263064494]
 script = ExtResource("1_rkbax")
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=1134518972]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.060158, 0)
 shape = SubResource("CapsuleShape3D_kqu6x")
 
-[node name="Camera3D" type="Camera3D" parent="."]
+[node name="Camera3D" type="Camera3D" parent="." unique_id=1958505254]
 unique_name_in_owner = true
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.7020297, 0)
 
-[node name="gun_model" parent="Camera3D" instance=ExtResource("1_oul6g")]
-transform = Transform3D(-0.30400386, 0, 0.007722404, 0, 0.30430013, 0, -0.00947408, 0, -0.24779625, 0.2530123, -0.1232115, -0.35322678)
+[node name="gun_model" parent="Camera3D" unique_id=1685357217 instance=ExtResource("1_oul6g")]
+transform = Transform3D(-0.30400386, 0, 0.007722404, 0, 0.30430013, 0, -0.00947408, 0, -0.24779625, 0.2495166, -0.23495853, -0.5977084)
 
-[node name="Marker3D" type="Marker3D" parent="Camera3D"]
+[node name="Marker3D" type="Marker3D" parent="Camera3D" unique_id=2136572885]
 unique_name_in_owner = true
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.27055514, -0.11423397, -0.55666494)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.043352634, -0.111421585, -0.67340434)
 
-[node name="Reticle" type="TextureRect" parent="."]
+[node name="Reticle" type="TextureRect" parent="." unique_id=460877382]
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
@@ -39,7 +39,7 @@ grow_vertical = 2
 texture = ExtResource("3_g1dw6")
 expand_mode = 1
 
-[node name="Timer" type="Timer" parent="."]
+[node name="Timer" type="Timer" parent="." unique_id=220476523]
 unique_name_in_owner = true
 wait_time = 0.2
 one_shot = true
