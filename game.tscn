@@ -1,5 +1,6 @@
 [gd_scene format=3 uid="uid://b7g538xykwors"]
 
+[ext_resource type="Script" uid="uid://c5lv3eav8go0g" path="res://game.gd" id="1_7jktm"]
 [ext_resource type="PackedScene" uid="uid://dpoe3djfljdk5" path="res://player/player.tscn" id="1_80nbo"]
 [ext_resource type="Material" uid="uid://csi31c6vablu5" path="res://level/platform.tres" id="1_feb5d"]
 [ext_resource type="Material" uid="uid://v2jifsl10kg2" path="res://level/bridge.tres" id="2_feb5d"]
@@ -16,7 +17,13 @@ fog_density = 0.055
 fog_height = 0.6
 fog_height_density = 0.15
 
+[sub_resource type="LabelSettings" id="LabelSettings_ryrav"]
+font_size = 48
+outline_size = 3
+outline_color = Color(0, 0, 0, 1)
+
 [node name="Game" type="Node3D" unique_id=448552860]
+script = ExtResource("1_7jktm")
 
 [node name="CSGBox3D" type="CSGBox3D" parent="." unique_id=1065567635]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -4.9, 0)
@@ -113,3 +120,14 @@ environment = SubResource("Environment_fc0e3")
 
 [node name="MobSpawner3D" parent="." unique_id=116414719 instance=ExtResource("5_7jktm")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 17, 1, 3)
+
+[node name="Label" type="Label" parent="." unique_id=7795653]
+unique_name_in_owner = true
+offset_left = 24.0
+offset_top = 21.0
+offset_right = 205.0
+offset_bottom = 88.0
+text = "Score: 0"
+label_settings = SubResource("LabelSettings_ryrav")
+
+[connection signal="mobSpawned" from="MobSpawner3D" to="." method="_on_mob_spawner_3d_mob_spawned"]

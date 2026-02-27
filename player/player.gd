@@ -37,4 +37,5 @@ func shootBullet():
 	%Marker3D.add_child(newBullet)
 	newBullet.global_transform = %Marker3D.global_transform
 	%Timer.start()
+	%AudioStreamPlayer.play()
 	
